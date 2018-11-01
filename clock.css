@@ -1,0 +1,266 @@
+body {
+	opacity: 0;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	padding: 0;
+	margin: 0;
+}
+#wrapper {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+body.lightGray, body.whitebg {
+	-webkit-transition: opacity 0.5s linear;
+}
+body.lightGray #clock, body.whitebg #clock {
+	-webkit-transition: opacity 2s linear;
+}
+body.loaded, body.loaded #clock {
+	opacity: 1.0;
+}
+html, body, div {
+	cursor:default;
+}
+/*span { cursor:e-resize;	}*/
+div#topPadding {
+	font-family: 'Helvetica Neue', sans-serif;
+	font-size: 125%;
+	height: 22%;
+	text-align: center;
+	opacity: 0;
+	-webkit-transition: opacity 1s linear;
+}
+div#topPadding.showTip {
+	opacity: 1.0;
+}
+div#clock, div#thedate {
+	vertical-align: 50%;
+	text-align: center;
+	font-size: 250px;
+	font-weight: 100;
+	line-height: 1em;
+	opacity: 0;
+}
+div#thedate {
+	font-size: 32px;
+	padding-top: 30px;
+	opacity: 0.4;
+	font-weight: 300;
+}
+span#suffix {
+	font-size: 32px;
+	opacity: 0.3;
+}
+span#colon {
+	opacity: 1;
+	vertical-align: 7%;
+	-webkit-transition: opacity 1s linear; 
+}
+span#colon.on {
+	opacity: 0.5;
+	-webkit-transition: opacity 1s linear; 
+}
+
+
+/* ICONS */
+.icon {
+	display: block;
+	position: absolute;
+	bottom: 0px;
+	z-index: 99;
+	width: 125px;
+	height: 100px;
+	background-image: url('icons-lowres.png');
+	background-repeat: no-repeat;
+	opacity: 0.15;
+	-webkit-transition: opacity 0.3s linear; 
+	margin: 25px 12px 12px 25px;
+	cursor: hand;
+}
+.icon:hover {
+	opacity: 1;
+}
+
+#apps {
+	right: 0px;
+	background-position: -125px 0px;
+}
+body.black #apps {
+	background-position: 0 0;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+	.icon {
+		background-image: url('icons-hires.png');
+		background-size: 200%;
+	}
+}
+
+
+/* SETTINGS */
+#settings {
+	left: 0px;
+	background-position: -125px -100px;
+}
+body.black #settings {
+	background-position: 0 -100px;
+}
+.setting {
+	display: none;
+	opacity: 0.5;
+	margin: 0;
+	/*background-color: rgba(255,255,255,0.3);*/
+}
+.showSettings .setting {
+	display: block;
+}
+#changeFont {
+	left: 125px;
+	background-position: -150px -200px;
+}
+body.black #changeFont {
+	background-position: -25px -200px;
+}
+#changeBg {
+	left: 250px;
+	background-position: -150px -300px;
+}
+body.black #changeBg {
+	background-position: -25px -300px;
+}
+#changeClock {
+	left: 375px;
+	background-position: -150px -400px;
+}
+body.black #changeClock {
+	background-position: -25px -400px;
+}
+#uninstall {
+	left: 500px;
+	background-position: -150px -500px;
+}
+body.black #uninstall {
+	background-position: -25px -500px;
+}
+
+
+
+
+/* FONTS */
+body.neue 		{ font-family: 'Helvetica Neue', sans-serif; }
+body.avenir 	{ font-family: 'Avenir Next', Avenir, sans-serif;}
+body.roboto		{ font-family: 'Roboto', 'Helvetica Neue', sans-serif; }
+body.robotoslab	{ font-family: 'Roboto Slab', 'Helvetica Neue', sans-serif; }
+body.georgia 	{ font-family: 'Georgia', sans-serif; }
+body.futura 	{ font-family: 'Futura', sans-serif; }
+body.amatic		{ font-family: 'Amatic SC', sans-serif; }
+body.girl 		{ font-family: 'The Girl Next Door', sans-serif; }
+body.indie		{ font-family: 'Indie Flower', cursive, sans-serif; }
+body.source		{ font-family: 'Source Code Pro', 'Courier New', sans-serif; }
+body.rationale	{ font-family: 'Rationale', sans-serif; }
+
+
+body.georgia span#colon { 
+	vertical-align: 0; 
+}
+body.source span#colon { 
+	margin-right: -50px;
+	margin-left: -50px;
+}
+
+
+/* BACKGROUND COLORS */
+body.blackbg 		#wrapper { background-color: #000; }
+body.whitebg 		#wrapper { background-color: #fff; }
+body.darkGray 		#wrapper { background-color: #333; }
+body.lightGray 		#wrapper { background-color: #eee; }
+body.red 			#wrapper { background-color: #900; }
+body.orange 		#wrapper { background-color: #f30; }
+body.yellow 		#wrapper { background-color: #ff0; }
+body.green 			#wrapper { background-color: #393; }
+body.blue 			#wrapper { background-color: #039; }
+body.purple 		#wrapper { background-color: #c0c; }
+
+
+/* FONT COLOR */
+body.white div#clock, body.white div#thedate, body.white div#topPadding {
+	color: rgba(255,255,255,.4);
+}
+body.black div#clock, body.black div#thedate, body.black div#topPadding {
+	color: rgba(0,0,0,.5);
+}
+
+
+/* FONTS */
+@font-face {
+	font-family: 'Indie Flower';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Indie Flower'), local('IndieFlower'), url(fonts/indie.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'The Girl Next Door';
+  font-style: normal;
+  font-weight: 400;
+  src: local('The Girl Next Door'), local('TheGirlNextDoor'), url(fonts/girl.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Slab Thin'), local('RobotoSlab-Thin'), url(fonts/roboto_slab_thin.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Slab Light'), local('RobotoSlab-Light'), url(fonts/roboto_slab_light.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Thin'), local('Roboto-Thin'), url(fonts/roboto_thin.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(fonts/roboto_light.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Amatic SC';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Amatic SC Regular'), local('AmaticSC-Regular'), url(fonts/amatic.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Amatic SC';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Amatic SC Bold'), local('AmaticSC-Bold'), url(fonts/amatic_bold.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Source Code Pro ExtraLight'), local('SourceCodePro-ExtraLight'), url(fonts/code_light.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(fonts/code.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Rationale';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Rationale'), local('Rationale-Regular'), url(fonts/rationale.woff2) format('woff2');
+}
